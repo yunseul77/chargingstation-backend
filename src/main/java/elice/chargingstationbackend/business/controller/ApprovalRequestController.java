@@ -19,12 +19,11 @@ public class ApprovalRequestController {
     @PostMapping
     public ResponseEntity<ApprovalRequest> createApprovalRequest(
         @RequestParam Long ownerId,
-        @RequestParam String requestType,
         @RequestParam("businessCertificate") MultipartFile businessCertificate,
         @RequestParam("identityProof") MultipartFile identityProof) throws IOException {
 
         ApprovalRequest approvalRequest = approvalRequestService.createApprovalRequest(
-            ownerId, requestType, businessCertificate, identityProof
+            ownerId, businessCertificate, identityProof
         );
         return ResponseEntity.ok(approvalRequest);
     }

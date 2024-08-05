@@ -21,8 +21,6 @@ public class ApprovalRequest {
     @JoinColumn(name = "ownerId")
     private BusinessOwner businessOwner;
 
-    private String requestType;
-
     private String status;
 
     private LocalDateTime timestamp;
@@ -31,16 +29,15 @@ public class ApprovalRequest {
 
     private String identityProofPath;
 
-
-    public void updateApprovalRequest(BusinessOwner businessOwner, String requestType, String status, LocalDateTime timestamp,
+    public void updateApprovalRequest(BusinessOwner businessOwner, String status, LocalDateTime timestamp,
         String businessCertificate, String identityProof) {
         this.businessOwner = businessOwner;
-        this.requestType = requestType;
         this.status = status;
         this.timestamp = timestamp;
         this.businessCertificatePath = businessCertificate;
         this.identityProofPath = identityProof;
     }
+
     public void setStatus(String status) {
         this.status = status;
     }

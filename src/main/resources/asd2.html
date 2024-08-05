@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approval Requests</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #f8f9fa;
+      padding: 10px;
+      text-align: center;
+    }
+    .navbar a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #007bff;
+    }
+    .container {
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    button {
+      padding: 5px 10px;
+      border: none;
+      background-color: #007bff;
+      color: white;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .btn-secondary {
+      background-color: #6c757d;
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <a href="#">유저 목록</a>
+  <a href="#">충전소 목록</a>
+  <a href="#">충전소 사업자 목록</a>
+  <a href="#">승인 요청 목록</a>
+</div>
+<div class="container">
+  <h1>승인 요청 목록</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>사업자 이름</th>
+      <th>요청 ID</th>
+      <th>요청 날짜</th>
+      <th>상태</th>
+      <th>사업자 증명서</th>
+      <th>신분 증명서</th>
+      <th>승인</th>
+      <th>거절</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>사업자A</td>
+      <td>12345</td>
+      <td>2024-08-05</td>
+      <td>승인 대기</td>
+      <td><a href="#">다운로드</a></td>
+      <td><a href="#">다운로드</a></td>
+      <td><button>승인</button></td>
+      <td><button class="btn-secondary">거절</button></td>
+    </tr>
+    <tr>
+      <td>사업자B</td>
+      <td>12346</td>
+      <td>2024-08-05</td>
+      <td>승인 대기</td>
+      <td><a href="#">다운로드</a></td>
+      <td><a href="#">다운로드</a></td>
+      <td><button>승인</button></td>
+      <td><button class="btn-secondary">거절</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
