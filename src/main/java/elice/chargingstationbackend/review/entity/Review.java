@@ -3,13 +3,17 @@ package elice.chargingstationbackend.review.entity;
 import elice.chargingstationbackend.charger.entity.Charger;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import elice.chargingstationbackend.user.User;
+import lombok.Getter;
 
 @Entity
+@Getter
 public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long reviewId;
+
 
     @ManyToOne
     @JoinColumn(name = "user_id")

@@ -25,7 +25,7 @@ public class User {
     private String password;
 
     @Column(nullable = false)
-    private String username;   // 이건 댓글 같은걸로 보이는 닉
+    private String userName;   // 이건 댓글 같은걸로 보이는 닉
 
 
     @Column(nullable = false, name = "admin")

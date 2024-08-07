@@ -17,7 +17,7 @@ public class UserService {
     public boolean existingEmail (String email) {
         return userRepository.findByEmail(email).isPresent();
     }
-    public boolean existingUsername (String username) {return userRepository.findByUsername(username).isPresent();}
+    public boolean existingUsername (String username) {return userRepository.findByUserName(username).isPresent();}
 
 
     public void createAdminUser (String email, String password) {
@@ -39,7 +39,7 @@ public class UserService {
         User user = new User();
         user.setEmail(UserDto.getEmail());
         user.setPassword(passwordEncoder.encode(UserDto.getPassword()));
-        user.setUsername(UserDto.getUsername());
+        user.setUserName(UserDto.getUsername());
         user.setAdmin(UserDto.isAdmin());
         user.setAddress(UserDto.getAddress());
         user.setPhoneNumber(UserDto.getPhoneNumber());
