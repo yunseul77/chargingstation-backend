@@ -1,13 +1,11 @@
 package elice.chargingstationbackend.charger.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter@Setter
+@Table(name="Charger")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Charger {
@@ -20,33 +18,62 @@ public class Charger {
     // @JoinColumn(name = "owner_id")
     // private Owner owner;
 
-    @Column
+    @Column(name = "chargerName", columnDefinition="VARCHAR(255)")
     private String chargerName;
 
-    @Column
+    @Column(name = "address", columnDefinition="VARCHAR(255)")
     private String address;
 
-    @Column
+    @Column(name = "latitude", columnDefinition="DOUBLE")
     private Double latitude;
 
-    @Column
+    @Column(name = "longitude", columnDefinition="DOUBLE")
     private Double longitude;
 
-    @Column(nullable = false)
+    @Column(name = "chgerType", columnDefinition="VARCHAR(10)")
+    private String chgerType;
+
+    @Column(nullable = true)
     private int slots;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private int availableSlots;
 
-    @Column(nullable = false)
-    private String connectorType;
-
-    @Column(nullable = false)
+    @Column(nullable = true)
     private double chargingSpeed;
 
-    @Column(nullable = false)
+    @Column
     private double chargingFee;
 
-    @Column(nullable = false)
-    private int parkingFee;
+    @Column(name = "useTime", columnDefinition="VARCHAR(255)")
+    private String useTime;
+
+    @Column(name = "busiCall", columnDefinition="VARCHAR(20)")
+    private String busiCall;
+
+    @Column(name = "stat", columnDefinition="VARCHAR(10)")
+    private Integer stat;
+
+    @Column(name = "parkingFee", columnDefinition="VARCHAR(1)", nullable = false)
+    private String parkingFee;
+
+    @Column(name = "limitYn", columnDefinition="VARCHAR(1)", nullable = false)
+    private String limitYn;
+
+    @Builder
+    public Charger(String chargerName, String address, Double latitude, Double longitude, String chgerType,
+                   double chargingFee, String useTime, String busiCall, Integer stat, String parkingFee, String limitYn) {
+        this.chargerName = chargerName;
+        this.address = address;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.chgerType = chgerType;
+        this.chargingFee = chargingFee;
+        this.useTime = useTime;
+        this.busiCall = busiCall;
+        this.stat = stat;
+        this.parkingFee = parkingFee;
+        this.limitYn = limitYn;
+    }
+
 }

@@ -1,4 +1,4 @@
-package elice.chargingstationbackend.maps;
+package elice.chargingstationbackend.charger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

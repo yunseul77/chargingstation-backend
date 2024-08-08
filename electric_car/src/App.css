@@ -1,4 +1,9 @@
-#map {
-  width: 100%;
-  height: 700px;
+#address-form {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 1000;
 }

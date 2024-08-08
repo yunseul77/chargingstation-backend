@@ -1,4 +1,4 @@
-package elice.chargingstationbackend.maps.DTO;
+package elice.chargingstationbackend.charger.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -12,7 +12,7 @@ public class ChargerListResponseDTO {
     private String businessName;
     private String chargerName;
     private String address;
-    private String connectorType;
+    private String chgerType;
     private double chargingFee;
     private int slots;
     private int availableSlots;
@@ -21,7 +21,7 @@ public class ChargerListResponseDTO {
         // this.businessName = charger.getOwner().getBusinessName();
         this.chargerName = charger.getChargerName();
         this.address = charger.getAddress();
-        this.connectorType = charger.getConnectorType();
+        this.chgerType = charger.getChgerType();
         this.chargingFee = charger.getChargingFee();
         this.slots = charger.getSlots();
         this.availableSlots = charger.getAvailableSlots();

@@ -1,16 +1,17 @@
 package elice.chargingstationbackend.charger.controller;
 
+import elice.chargingstationbackend.charger.dto.ChargeStationDTO;
+import elice.chargingstationbackend.charger.dto.CoordinateDTO;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import elice.chargingstationbackend.charger.dto.ChargerDetailResponseDTO;
 import elice.chargingstationbackend.charger.dto.ChargerListResponseDTO;
 import elice.chargingstationbackend.charger.service.ChargerService;
 import lombok.RequiredArgsConstructor;
+
+import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -30,5 +31,17 @@ public class ChargerController {
     public ResponseEntity<ChargerDetailResponseDTO> getChagerDetail(@PathVariable Long chargerId) {
         ChargerDetailResponseDTO chargerDetail = chargerService.getChagerDetail(chargerId);
         return ResponseEntity.ok().body(chargerDetail);
+    }
+
+    @PostMapping("/getChargerInfo")
+    public ResponseEntity<List<ChargeStationDTO>> findChargestation(@RequestBody CoordinateDTO coordinateDTO) throws IOException {
+
+        double lat = coordinateDTO.getLat();
+        double lng = coordinateDTO.getLng();
+        double distance = 10.0; //10km
+
+        List<ChargeStationDTO> chargeStationDTOList =  chargerService.getChargeStationsWithinDistance(lat, lng, distance);
+
+        return ResponseEntity.ok(chargeStationDTOList);
     }
 }

@@ -1,6 +1,6 @@
-package elice.chargingstationbackend.maps.DTO;
+package elice.chargingstationbackend.charger.dto;
 
-import elice.chargingstationbackend.maps.Entity.ChargeStationAPI;
+import elice.chargingstationbackend.charger.entity.Charger;
 import lombok.*;
 
 @Getter
@@ -9,29 +9,29 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class ChargeStationDTO {
-    private String statNm;
+    private String chargerName;
     private String chgerType;
-    private String addr;
-    private double lat;
-    private double lng;
+    private String address;
+    private double latitude;
+    private double longitude;
     private String useTime;
     private String busiCall;
     private Integer stat;
-    private String parkingFree;
+    private String parkingFee;
     private double distance;
     private String limitYn;
 
-    public ChargeStationAPI DtoToEntity(ChargeStationDTO chargeStationDTO){
-        return ChargeStationAPI.builder()
-                .statNm(chargeStationDTO.getStatNm())
+    public Charger DtoToEntity(ChargeStationDTO chargeStationDTO){
+        return Charger.builder()
+                .chargerName(chargeStationDTO.getChargerName())
                 .chgerType(chargeStationDTO.getChgerType())
-                .addr(chargeStationDTO.getAddr())
-                .lat(chargeStationDTO.getLat())
-                .lng(chargeStationDTO.getLng())
+                .address(chargeStationDTO.getAddress())
+                .latitude(chargeStationDTO.getLatitude())
+                .longitude(chargeStationDTO.getLongitude())
                 .useTime(chargeStationDTO.getUseTime())
                 .busiCall(chargeStationDTO.getBusiCall())
                 .stat(chargeStationDTO.getStat())
-                .parkingFree(chargeStationDTO.getParkingFree())
+                .parkingFee(chargeStationDTO.getParkingFee())
                 .limitYn(chargeStationDTO.getLimitYn())
                 .build();
     }
