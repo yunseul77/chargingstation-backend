@@ -1,5 +1,7 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
 import React from 'react';
-import NaverMap from './NaverMap';
 import './App.css';
 
 function App() {
@@ -7,7 +9,9 @@ function App() {
         <div className="App">
             <h1>Naver Map Example</h1>
             <NaverMap />
+
         </div>
+
     );
 }
 
